@@ -12,7 +12,6 @@
 	padding-right: 10px;
 	background-color: #059ee0;
 	height: 50px;
-	width: 100%;
 }
 
 .chats__avatar {
@@ -30,8 +29,13 @@
 .chats__search > input {
 	outline: none;
 	border: none;
-	font: 12px;
+	font-size: 12px;
 	flex: 1;
 	color: white;
 	background-color: transparent;
+}
+
+.chats__search > input::placeholder {
+	color: white;
+	opacity: 1;
 }

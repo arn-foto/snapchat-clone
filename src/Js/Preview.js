@@ -79,7 +79,7 @@ function Preview() {
 			<img src={cameraImage} alt="" />
 			<div onClick={sendPost} className="preview__footer">
 				<h2>Send Now</h2>
-				<SendIcon fontsize="small" classname="preview__sendIcon" />
+				<SendIcon fontSize="small" className="preview__sendIcon" />
 			</div>
 		</div>
 	);
