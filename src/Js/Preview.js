@@ -11,6 +11,10 @@ import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import CropIcon from "@material-ui/icons/Crop";
 import TimerIcon from "@material-ui/icons/Timer";
+import SendIcon from "@material-ui/icons/Send";
+import { v4 as uuid } from "uuid";
+import { db, storage } from "./firebase";
+import firebase from "firebase";
 
 function Preview() {
 	const cameraImage = useSelector(selectCameraImage);
@@ -27,6 +31,38 @@ function Preview() {
 		dispatch(resetCameraImage());
 	};
 
+	// Using UUID to prevent user id collision
+	const sendPost = () => {
+		const id = uuid();
+		const uploadTask = storage
+			.ref(`posts/${id}`)
+			.putString(cameraImage, "data_url");
+
+		uploadTask.on(
+			"state_changed",
+			null,
+			(error) => {
+				console.log(error);
+			},
+			() => {
+				// The "complete" function
+				storage
+					.ref("posts")
+					.child(id)
+					.getDownloadURL()
+					.then((url) => {
+						db.collection("posts").add({
+							imageURL: url,
+							username: "Anthony",
+							read: false,
+							// profilePic
+							timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+						});
+					});
+			}
+		);
+	};
+
 	return (
 		<div className="preview">
 			<div className="preview__toolbarRight">
@@ -40,6 +76,10 @@ function Preview() {
 			</div>
 			<CloseIcon onClick={closePreview} className="preview__close" />
 			<img src={cameraImage} alt="" />
+			<div onClick={sendPost} className="preview__footer">
+				<h2>Send Now</h2>
+				<SendIcon fontsize="small" classname="preview__sendIcon" />
+			</div>
 		</div>
 	);
 }
