@@ -58,6 +58,7 @@ function Preview() {
 							// profilePic
 							timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 						});
+						history.replace("/chats");
 					});
 			}
 		);
