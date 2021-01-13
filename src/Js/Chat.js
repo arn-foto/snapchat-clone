@@ -16,6 +16,7 @@ function Chat({ id, username, timestamp, read, imageUrl, profilePic }) {
 		if (!read) {
 			dispatch(selectImage(imageUrl));
 			db.collection("posts").doc(id).set({ read: true }, { merge: true });
+
 			history.push("/chats/view");
 		}
 	};

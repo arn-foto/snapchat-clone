@@ -10,7 +10,7 @@ function ChatView() {
 
 	useEffect(() => {
 		if (!selectedImage) {
-			// exit();
+			exit();
 		}
 	}, [selectedImage]);
 
