@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
+import Chat from "../Js/Chat";
 import "../styles/Chats.css";
 import { db } from "./firebase";
 
