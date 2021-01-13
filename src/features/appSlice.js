@@ -8,7 +8,7 @@ export const appSlice = createSlice({
 	},
 	reducers: {
 		login: (state, action) => {
-			state.user += action.payload;
+			state.user = action.payload;
 		},
 		logout: (state) => {
 			state.user = null;
@@ -22,8 +22,10 @@ export const appSlice = createSlice({
 	},
 });
 
-export const { login, logout, selectedImage, resetImage } = appSlice.actions;
+export const { login, logout, selectImage, resetImage } = appSlice.actions;
 
-export const selectapp = (state) => state.app.value;
+export const selectUser = (state) => state.app.user;
+
+export const selectSelectedImage = (state) => state.app.selectedImage;
 
 export default appSlice.reducer;
