@@ -6,6 +6,10 @@
 	border-bottom: 1px solid whitesmoke;
 }
 
+.chat:hover {
+	opacity: 0.8;
+}
+
 .chat__avatar {
 	height: 35px !important;
 	width: 35px !important;
