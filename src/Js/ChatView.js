@@ -15,7 +15,7 @@ function ChatView() {
 	}, [selectedImage]);
 
 	const exit = () => {
-		history.replace("/chats");
+		history.replace("/chats/view");
 	};
 
 	return (
