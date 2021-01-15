@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout, selectUser } from "../features/appSlice";
 import { auth } from "./firebase";
+import snapLogo from "../img/snap-logo-01.png";
 
 function App() {
 	const user = useSelector(selectUser);
@@ -36,22 +37,28 @@ function App() {
 				{!user ? (
 					<Login />
 				) : (
-					<div className="app__body">
-						<Switch>
-							<Route path="/chats/view">
-								<ChatView />
-							</Route>
-							<Route path="/chats">
-								<Chats />
-							</Route>
-							<Route path="/preview">
-								<Preview />
-							</Route>
-							<Route exact path="/">
-								<WebcamCapture />
-							</Route>
-						</Switch>
-					</div>
+					<>
+						{" "}
+						<img className="app__logo" src={snapLogo} alt="" />
+						<div className="app__body">
+							<div className="app__bodyBackground">
+								<Switch>
+									<Route path="/chats/view">
+										<ChatView />
+									</Route>
+									<Route path="/chats">
+										<Chats />
+									</Route>
+									<Route path="/preview">
+										<Preview />
+									</Route>
+									<Route exact path="/">
+										<WebcamCapture />
+									</Route>
+								</Switch>
+							</div>
+						</div>
+					</>
 				)}
 			</Router>
 		</div>
