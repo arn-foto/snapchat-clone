@@ -40,6 +40,7 @@ function Chats() {
 					}) => (
 						<Chat
 							key={id}
+							id={id}
 							username={username}
 							timestamp={timestamp}
 							imageUrl={imageUrl}

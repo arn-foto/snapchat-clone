@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { resetCameraImage, selectCameraImage } from "../features/cameraSlice";
 import "../styles/Preview.css";
 import CloseIcon from "@material-ui/icons/Close";

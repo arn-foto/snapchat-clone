@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { selectSelectedImage } from "../features/appSlice";
 import "../styles/ChatView.css";
 
@@ -15,7 +15,7 @@ function ChatView() {
 	}, [selectedImage]);
 
 	const exit = () => {
-		history.replace("/chats/view");
+		history.replace("/chats");
 	};
 
 	return (

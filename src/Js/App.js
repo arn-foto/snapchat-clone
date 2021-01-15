@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/App.css";
-import WebcamCapture from "./WebcamCapture";
+import WebcamCapture from "../Js/WebcamCapture";
 import Chats from "../Js/Chats";
-import Preview from "./Preview";
-import ChatView from "./ChatView";
+import Preview from "../Js/Preview";
+import ChatView from "../Js/ChatView";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
