@@ -15,3 +15,7 @@ Tech stack:
 - JavaScript, React, React-router, redux
 - Material UI, Css
 - Firebase for user Auth/Data
+
+<a href="https://www.loom.com/share/408078a3ad0c455db67cd5c8d3d2ac71"> <p>SnapChat (clone) - Watch Video</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/408078a3ad0c455db67cd5c8d3d2ac71-with-play.gif"> </a>
+
+# This is NOT a real Snapchat and is created to show functionality of certain technologies applied throughout this demo.
